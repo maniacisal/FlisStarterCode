@@ -15,7 +15,9 @@ while True:
         if data['response_code'] != 0:
             input("Bad response from api. Press enter to try again...")
             continue # Go back to top of while loop
-        result = data['results'][0]
+        result = data['results'][0] # Get first (and only) question
+
+        # Question should really be a class. But lets keep it simple for now.
         category = result['category']
         correct_answer = result['correct_answer']
         difficulty = result['difficulty']
